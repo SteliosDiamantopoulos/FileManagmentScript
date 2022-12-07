@@ -32,47 +32,13 @@ def create_target_files(source):
         except:
             continue
 
-def rename_files_in_folder(source,user_input):
-    counter=0
-    for file in os.listdir():
-        print(file)
-        path = os.getcwd()
-        old_path = os.path.join(path,file)
-        if counter is 0:
-            customVariable = 'ONE'
-        elif counter is 1:
-            customVariable = 'TWO'
-        else:
-            customVariable = "THREE"
-        new_path = os.path.join(path,str(counter)+str(customVariable)+'.'+str(user_input))
-        counter+=1
-        os.rename(old_path,new_path)
-        
-        
-
-
-        
-    #print(oldname)
-    
-
 def main():
-    path = os.getcwd()
-    userchoice='png'
-    a = path + "\\" + userchoice
-    source_dir = os.chdir(a)
-    rename_files_in_folder(source_dir,userchoice)
-     #create_target_files(source_dir)
-
+     create_target_files(source_dir)
 
 if __name__=='__main__':
     ##Chosse location for the script to be applied
     #source_dir = r"C:\Users\stdia\Desktop\PythonScripting\data"
     ##Make sure that the directory is the chosen one
-    #path = os.getcwd()
-    #userchoice=str(input("Enter File_Name TO Operate On:"))
-    #userchoice='png'
-    #a = path + "\\" + userchoice
-    # source_dir = os.chdir(a)
-    # print(source_dir)
+    source_dir = os.getcwd()
     main()
 
